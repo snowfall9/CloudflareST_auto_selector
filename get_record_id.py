@@ -36,7 +36,7 @@ for result in results:
     if domain in domains_list:
         config["domains"][domain] = result.get("id")
 
-with open("config.json","w",encoding="utf-8") as json_file:
+with open(".\\config\\config.json","w",encoding="utf-8") as json_file:
     json.dump(config, json_file, indent=4)
 
 print("config.json文件已完成更新")
