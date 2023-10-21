@@ -1,7 +1,7 @@
 import requests
 import json
 
-with open("config.json","r",encoding="utf-8") as json_file:
+with open(".\\config\\config.json","r",encoding="utf-8") as json_file:
     config = json.load(json_file)
     email = config.get("email")
     global_api_key = config.get("global_api_key")
@@ -21,7 +21,7 @@ response = requests.get(url, headers=headers)
 domains_details = response.json()
 results = domains_details.get("result")
 
-with open("domains.txt", "r",encoding="utf-8") as domains:
+with open(".\\config\\domains.txt", "r",encoding="utf-8") as domains:
     try:
         domains_list=[domain.strip() for domain in domains]
     except:
@@ -40,6 +40,3 @@ with open("config.json","w",encoding="utf-8") as json_file:
     json.dump(config, json_file, indent=4)
 
 print("config.json文件已完成更新")
-
-
-
