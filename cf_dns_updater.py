@@ -32,7 +32,7 @@ def get_previously_selected_ips(): #获取上一次优选的ip
         print("上一次优选的ip已添加到此次优选")
         return ip_list
     
-#获取固定ip
+#获取固定ip,可根据喜好添加
 def get_fixed_ips():
     with open (".\\config\\fixed_ips.txt","r",encoding="utf-8") as file:
         ip_list= [ip.strip() for ip in file.readlines()]
@@ -125,6 +125,8 @@ def load_config(): # 读取config.json文件
 def update_cloudflare_dns(email, global_api_key, zone_id, domains):
     print("更新Cloudflare DNS记录...")
     ips = get_ips()  # 读取result.csv文件中的IPs
+    if len(ips)>20: #下载速度为0，请尝试更换测速地址
+        return domains
     res_domains=domains.copy() #复制domains字典
     for idx, (domain, record_id) in enumerate(domains.items()):
         if idx >= len(ips):
