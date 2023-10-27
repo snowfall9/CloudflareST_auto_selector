@@ -73,18 +73,6 @@
 
 ------
 
-## 贡献
-
-如果你发现了bug或有新的功能建议，请通过GitHub的Issues提交。欢迎任何形式的贡献。
-
-------
-
-## 联系信息
-
-- **GitHub**: [snowfall9](https://github.com/snowfall9) 
-
-------
-
 ## 更新日志
 
 - v1.0 - 初始版本，支持自动下载中转节点、筛选IP、测速并更新Cloudflare的DNS记录。
